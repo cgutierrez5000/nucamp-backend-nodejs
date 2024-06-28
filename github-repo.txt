@@ -1,1 +1,26 @@
 https://github.com/cgutierrez5000/nucamp-backend-nodejs
+
+
+To start mongoDB server: 
+
+mongod --dbpath=data
+
+
+To create a mongoDB database:
+
+db
+show dbs
+use nucampsite
+db
+
+----------------
+Next, create a collection named campsites, and insert a new campsite document in the collection:
+db.campsites.insertOne({ name: "React Lake Campground", description: "Test" });
+
+Then to print out the campsites in the collection, type::
+db.campsites.find().pretty();
+
+To check on the information encoded into an instance of ObjectId, type the following at the prompt:
+const id = new ObjectId();
+id.getTimestamp();
+
