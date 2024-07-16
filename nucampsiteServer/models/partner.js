@@ -1,32 +1,27 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-require('mongoose-currency').loadType(mongoose);
-
-const partnerSchema = new Schema(
-  {
+const partnerSchema = new Schema({
     name: {
-      type: String,
-      required: true,
-      unique: true,
+        type: String,
+        required: true
     },
     image: {
-      type: String,
-      required: true,
+        type: String,
+        required: true
     },
     featured: {
-      type: Boolean,
-      required: false,
+        type: Boolean,
+        default: false
     },
     description: {
-      type: String,
-      required: true,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
+        type: String,
+        required: true
+    }
+},
+{
+    timestamps: true
+});
 
 const Partner = mongoose.model('Partner', partnerSchema);
 
